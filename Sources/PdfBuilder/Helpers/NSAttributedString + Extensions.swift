@@ -1,10 +1,14 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension NSAttributedString {
     func bounds(withSize: CGSize) -> CGRect {
         return boundingRect(
             with: withSize,
-            options: NSStringDrawingOptions.usesLineFragmentOrigin,
+            options: NSString.DrawingOptions.usesLineFragmentOrigin,
             context: nil)
     }
 }

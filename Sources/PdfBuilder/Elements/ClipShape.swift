@@ -1,4 +1,8 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 import AVFoundation
 
 extension Pdf {
@@ -31,12 +35,10 @@ extension Pdf {
                 let clipRect = AVMakeRect(
                     aspectRatio: CGSize(width: 1, height: 1),
                     insideRect: fillRect)
-                let path = UIBezierPath(roundedRect: clipRect, cornerRadius: clipRect.width / 2)
-                context?.addPath(path.cgPath)
+                UIBezierPath(roundedRect: clipRect, cornerRadius: clipRect.width / 2).addClip()
                 
             case .roundedRect(let radius):
-                let path = UIBezierPath(roundedRect: fillRect, cornerRadius: radius)
-                context?.addPath(path.cgPath)
+                UIBezierPath(roundedRect: fillRect, cornerRadius: radius).addClip()
             }
             context?.clip()
 

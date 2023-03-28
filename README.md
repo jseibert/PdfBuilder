@@ -2,6 +2,10 @@
 
 PdfBuilder is a swift library made to make creation of the Pdf file from code simpler. It's inspired by SwiftUI and give similar declarative interface to design page layout.
 
+## Supported platforms
+    - iOS
+    - OSX
+
 ## Layout components
     - Background
     - ClipShape
@@ -67,7 +71,7 @@ PdfBuilder is a swift library made to make creation of the Pdf file from code si
                     .padding(16),
 
                 Pdf.Text("* 3"),
-                Pdf.Image(UIImage(systemName: "person"))
+                Pdf.Image(AImage(systemName: "person"))
                     .padding(8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
@@ -174,7 +178,7 @@ PdfBuilder is a swift library made to make creation of the Pdf file from code si
                         color: .green, Pdf.Text(lorem2))),
 
                 Pdf.Text("* 3"),
-                Pdf.Image(UIImage(systemName: "person")),
+                Pdf.Image(AImage(systemName: "person")),
                 Pdf.Text("* 4"),
                 Pdf.VStack([
                     Pdf.Text("Row 1"),

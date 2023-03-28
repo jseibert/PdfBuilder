@@ -36,7 +36,7 @@ struct ClipShape_Previews: PreviewProvider {
                     .padding(16),
                 
                 Pdf.Text("* 3"),
-                Pdf.Image(UIImage(systemName: "person"))
+                Pdf.Image(AImage(systemName: "person"))
                     .padding(8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))

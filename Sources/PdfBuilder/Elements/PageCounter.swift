@@ -1,4 +1,8 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 public protocol PdfPageCounterProtocol: AnyObject {
     var pageNumber: Int { get set }
@@ -20,13 +24,14 @@ extension Pdf {
         }
 
         open override func draw(rect: inout CGRect) {
+            Pdf.log(pageNumber)
             let textRect = rect.insetBy(dx: _padding, dy: _padding)
             let text = NSAttributedString(
                 string: String(format: format, pageNumber),
                 attributes: attributes)
             let textBounds = text.bounds(withSize: textRect.size)
 
-            let options: NSStringDrawingOptions = [
+            let options: NSString.DrawingOptions = [
                 .usesLineFragmentOrigin,
                 .truncatesLastVisibleLine
             ]

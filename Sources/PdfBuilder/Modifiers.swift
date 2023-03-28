@@ -1,8 +1,13 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
+
 
 public extension DocumentItem {
 
-    func background(_ color: UIColor) -> DocumentItem {
+    func background(_ color: AColor) -> DocumentItem {
         Pdf.Background(color: color, self)
     }
 

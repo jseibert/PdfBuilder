@@ -1,13 +1,17 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension Pdf {
 
     open class Background: DocumentItemAutoBreak {
 
-        let color: UIColor
+        let color: AColor
         let element: DocumentItem
 
-        public init(color: UIColor, _ element: DocumentItem) {
+        public init(color: AColor, _ element: DocumentItem) {
             self.color = color
             self.element = element
         }

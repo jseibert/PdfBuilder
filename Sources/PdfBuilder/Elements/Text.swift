@@ -1,4 +1,8 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension Pdf {
     
@@ -7,7 +11,7 @@ extension Pdf {
         let text: NSAttributedString
         var _padding: CGFloat = 2
         
-        public init(_ text: String, attributes: StringAttributes = StringAttributes(), backgroundColor: UIColor? = nil) {
+        public init(_ text: String, attributes: StringAttributes = StringAttributes(), backgroundColor: AColor? = nil) {
             self.text = NSAttributedString(
                 string: text,
                 attributes: attributes)
@@ -15,17 +19,19 @@ extension Pdf {
             self.backgroundColorFill = backgroundColor ?? .clear
         }
         
-        public init(_ text: NSAttributedString, backgroundColor: UIColor? = nil) {
+        public init(_ text: NSAttributedString, backgroundColor: AColor? = nil) {
             self.text = text
             super.init()
             self.backgroundColorFill = backgroundColor ?? .clear
         }
         
         open override func draw(rect: inout CGRect) {
+            Pdf.log(text.string)
+            
             let textRect = rect.insetBy(dx: _padding, dy: _padding)
             let textBounds = text.bounds(withSize: textRect.size)
 
-            let options: NSStringDrawingOptions = [
+            let options: NSString.DrawingOptions = [
                 .usesLineFragmentOrigin,
                 .truncatesLastVisibleLine
             ]

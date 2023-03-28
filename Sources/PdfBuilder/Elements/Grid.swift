@@ -1,4 +1,8 @@
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension Pdf {
     
@@ -13,9 +17,11 @@ extension Pdf {
         let columns: [GridColumnWidth]
         let rows: [GridColumnWidth]?
         let items: [DocumentItem]
-        let separatorColor: UIColor
+        let separatorColor: AColor
         
-        public init(columns: [GridColumnWidth], rows: [GridColumnWidth]? = nil, items: [DocumentItem], separatorColor: UIColor = .separator) {
+        public init(columns: [GridColumnWidth], rows: [GridColumnWidth]? = nil, 
+                    items: [DocumentItem], separatorColor: AColor = Pdf.separatorColor) {
+            
             self.columns = columns
             self.rows = rows
             self.items = items
@@ -23,6 +29,7 @@ extension Pdf {
         }
         
         open override func draw(rect: inout CGRect) {
+            Pdf.log("columns: \(columns.count)")
             let context = UIGraphicsGetCurrentContext()
                         
             let columnWidth = calculateColumnsWidth(rect: rect)
@@ -67,7 +74,7 @@ extension Pdf {
                     
                     cellOffset += columnWidth[index]
 
-                    context?.addPath(UIBezierPath(rect: cellRect).cgPath)
+                    //context?.addPath(UIBezierPath(rect: cellRect).cgPath)
                     
                     context?.setFillColor(cell.backgroundColorFill.cgColor)
                     context?.setStrokeColor(separatorColor.cgColor)
@@ -134,9 +141,10 @@ extension Pdf {
                     width: columnWidth[index],
                     height: maxHeight)
                 
-                UIGraphicsBeginImageContext(cellRect.size)
-                cell.draw(rect: &cellRect)
-                UIGraphicsEndImageContext()
+                
+                Pdf.drawImage(size: cellRect.size) {
+                    cell.draw(rect: &cellRect)
+                }
                 
                 let tempHeight = maxHeight - cellRect.height
                 if tempHeight > rowHeight {

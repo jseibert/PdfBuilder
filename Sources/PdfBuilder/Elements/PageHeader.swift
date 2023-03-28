@@ -1,5 +1,8 @@
-import Foundation
+#if os(OSX)
+import AppKit
+#else
 import UIKit
+#endif
 
 extension Pdf {
     
@@ -8,7 +11,7 @@ extension Pdf {
         var top: [DocumentItem]
         var bottom: [DocumentItem]
         
-        public init(top: [DocumentItem], bottom: [DocumentItem] = [], backgroundColorFill: UIColor? = nil) {
+        public init(top: [DocumentItem], bottom: [DocumentItem] = [], backgroundColorFill: AColor? = nil) {
             self.top = top
             self.bottom = bottom
             super.init()
@@ -25,7 +28,7 @@ extension Pdf {
 
             let tempRect = estimateDraw(rect: rect, elements: top)
 
-            var fillRect = UIGraphicsGetPDFContextBounds()
+            var fillRect = builder?.fullPageRect ?? .zero
             fillRect.origin.y = rect.origin.y
             fillRect.size.height = rect.height - tempRect.height
 
@@ -48,7 +51,7 @@ extension Pdf {
 
             /// Fill
 
-            var fillRect = UIGraphicsGetPDFContextBounds()
+            var fillRect = builder?.fullPageRect ?? .zero
             fillRect.origin.y = rect.origin.y + move
             fillRect.size.height = contentHeight
 
