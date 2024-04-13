@@ -1,8 +1,8 @@
-import UIKit
+import AppKit
 
 open class DocumentItem: NSObject {
 
-    open var backgroundColorFill: UIColor = .clear
+    open var backgroundColorFill: NSColor = .clear
 
     open func layout(rect: CGRect) {
 
@@ -16,7 +16,7 @@ open class DocumentItem: NSObject {
 
     }
 
-    open func backgroundColor(_ color: UIColor?) -> Self {
+    open func backgroundColor(_ color: NSColor?) -> Self {
         backgroundColorFill = color ?? .clear
         return self
     }

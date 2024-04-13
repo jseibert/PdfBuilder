@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 extension NSAttributedString {
     func bounds(withSize: CGSize) -> CGRect {

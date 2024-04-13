@@ -1,4 +1,4 @@
-import UIKit
+import AppKit
 
 extension Pdf {
     
@@ -7,7 +7,7 @@ extension Pdf {
         let text: NSAttributedString
         var _padding: CGFloat = 2
         
-        public init(_ text: String, attributes: StringAttributes = StringAttributes(), backgroundColor: UIColor? = nil) {
+        public init(_ text: String, attributes: StringAttributes = StringAttributes(), backgroundColor: NSColor? = nil) {
             self.text = NSAttributedString(
                 string: text,
                 attributes: attributes)
@@ -15,7 +15,7 @@ extension Pdf {
             self.backgroundColorFill = backgroundColor ?? .clear
         }
         
-        public init(_ text: NSAttributedString, backgroundColor: UIColor? = nil) {
+        public init(_ text: NSAttributedString, backgroundColor: NSColor? = nil) {
             self.text = text
             super.init()
             self.backgroundColorFill = backgroundColor ?? .clear

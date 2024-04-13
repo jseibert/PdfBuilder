@@ -1,4 +1,4 @@
-import UIKit
+import AppKit
 
 extension Pdf {
     
@@ -8,7 +8,7 @@ extension Pdf {
             
             let context = UIGraphicsGetCurrentContext()
             context?.move(to: rect.origin)
-            context?.setStrokeColor(UIColor.lightGray.cgColor)
+            context?.setStrokeColor(NSColor.lightGray.cgColor)
             context?.setLineWidth(0.6)
             context?.addLine(to: CGPoint(x: rect.origin.x + rect.size.width, y: rect.origin.y))
             context?.strokePath()

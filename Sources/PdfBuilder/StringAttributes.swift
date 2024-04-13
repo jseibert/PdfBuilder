@@ -1,4 +1,4 @@
-import UIKit
+import AppKit
 
 public typealias StringAttributes = [NSAttributedString.Key : Any]
 
@@ -13,43 +13,43 @@ public func + (left: StringAttributes, right: StringAttributes) -> StringAttribu
 public extension StringAttributes {
     
     static func light(_ size: CGFloat = 10) -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: size, weight: .light),
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: size, weight: .light),
     ]}
     
     static func title() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: 14, weight: .bold),
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: 14, weight: .bold),
     ]}
     
     static func title2() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: 12, weight: .bold),
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: 12, weight: .bold),
     ]}
     
     static func regular() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: 10, weight: .regular)
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: 10, weight: .regular)
     ]}
     
     static func bold() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: 10, weight: .bold)
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: 10, weight: .bold)
     ]}
     
     static func italic() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.italicSystemFont(ofSize: 10)
+        .foregroundColor: NSColor.black,
+        .font: NSFont.italicSystemFont(ofSize: 10)
     ]}
     
     static func caption() -> StringAttributes {[
-        .foregroundColor: UIColor.black,
-        .font: UIFont.systemFont(ofSize: 7, weight: .light)
+        .foregroundColor: NSColor.black,
+        .font: NSFont.systemFont(ofSize: 7, weight: .light)
     ]}
     
     static func boldRed() -> StringAttributes {[
-        .foregroundColor: UIColor.red,
-        .font: UIFont.systemFont(ofSize: 10, weight: .bold)
+        .foregroundColor: NSColor.red,
+        .font: NSFont.systemFont(ofSize: 10, weight: .bold)
     ]}
     
     static func alignment(_ alignment: NSTextAlignment) -> StringAttributes {
@@ -64,7 +64,7 @@ public extension StringAttributes {
         return [.paragraphStyle: style]
     }
     
-    static func foregroundColor(_ color: UIColor) -> StringAttributes {[
+    static func foregroundColor(_ color: NSColor) -> StringAttributes {[
         .foregroundColor: color
     ]}
     
@@ -78,6 +78,6 @@ public extension StringAttributes {
     func light(_ size: CGFloat = 10) -> StringAttributes { self + Self.light(size) }
     func lineHeight(_ height: CGFloat) -> StringAttributes { self + Self.lineHeight(height) }
     func alignment(_ alignment: NSTextAlignment) -> StringAttributes { self + Self.alignment(alignment) }
-    func foregroundColor(_ color: UIColor) -> StringAttributes { self + Self.foregroundColor(color) }
+    func foregroundColor(_ color: NSColor) -> StringAttributes { self + Self.foregroundColor(color) }
 }
 

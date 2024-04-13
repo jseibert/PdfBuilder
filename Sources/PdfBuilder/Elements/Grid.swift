@@ -1,4 +1,4 @@
-import UIKit
+import AppKit
 
 extension Pdf {
     
@@ -12,9 +12,9 @@ extension Pdf {
         
         let columns: [GridColumnWidth]
         let items: [DocumentItem]
-        let separatorColor: UIColor
+        let separatorColor: NSColor
         
-        public init(columns: [GridColumnWidth], items: [DocumentItem], separatorColor: UIColor = .separator) {
+        public init(columns: [GridColumnWidth], items: [DocumentItem], separatorColor: NSColor = .separator) {
             self.columns = columns
             self.items = items
             self.separatorColor = separatorColor

@@ -1,5 +1,4 @@
 import Foundation
-import UIKit
 
 extension Pdf {
     
@@ -8,7 +7,7 @@ extension Pdf {
         var top: [DocumentItem]
         var bottom: [DocumentItem]
         
-        public init(top: [DocumentItem], bottom: [DocumentItem] = [], backgroundColorFill: UIColor? = nil) {
+        public init(top: [DocumentItem], bottom: [DocumentItem] = [], backgroundColorFill: NSColor? = nil) {
             self.top = top
             self.bottom = bottom
             super.init()

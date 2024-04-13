@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 extension Pdf {
     open class Spacer: DocumentItem {

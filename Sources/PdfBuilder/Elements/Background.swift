@@ -1,13 +1,13 @@
-import UIKit
+import AppKit
 
 extension Pdf {
 
     open class Background: DocumentItemAutoBreak {
 
-        let color: UIColor
+        let color: NSColor
         let element: DocumentItem
 
-        public init(color: UIColor, _ element: DocumentItem) {
+        public init(color: NSColor, _ element: DocumentItem) {
             self.color = color
             self.element = element
         }

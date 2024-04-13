@@ -67,7 +67,7 @@ PdfBuilder is a swift library made to make creation of the Pdf file from code si
                     .padding(16),
 
                 Pdf.Text("* 3"),
-                Pdf.Image(UIImage(systemName: "person"))
+                Pdf.Image(NSImage(systemName: "person"))
                     .padding(8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
@@ -174,7 +174,7 @@ PdfBuilder is a swift library made to make creation of the Pdf file from code si
                         color: .green, Pdf.Text(lorem2))),
 
                 Pdf.Text("* 3"),
-                Pdf.Image(UIImage(systemName: "person")),
+                Pdf.Image(NSImage(systemName: "person")),
                 Pdf.Text("* 4"),
                 Pdf.VStack([
                     Pdf.Text("Row 1"),

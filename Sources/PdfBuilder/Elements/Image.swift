@@ -1,15 +1,15 @@
-import UIKit
+import AppKit
 import AVFoundation
 
 extension Pdf {
 
     open class Image: DocumentItemAutoBreak {
-        let image: UIImage?
+        let image: NSImage?
         let fixedSize: CGSize?
         let circle: Bool
         
         // TODO: create shapes if need more then circle
-        public init(_ image: UIImage?, size: CGSize? = nil, circle: Bool = false) {
+        public init(_ image: NSImage?, size: CGSize? = nil, circle: Bool = false) {
             self.image = image
             self.fixedSize = size
             self.circle = circle
