@@ -32,7 +32,7 @@ open class DocumentItem: NSObject {
     open func estimateDraw(rect: CGRect, elements: [DocumentItem]) -> CGRect {
         Pdf.isEstimating = true
         var tempRect = rect
-        let img = Pdf.drawImage(size: rect.size) {
+        Pdf.drawImage(size: rect.size) {
             for item in elements {
                 item.draw(rect: &tempRect)
             }
@@ -48,7 +48,7 @@ open class DocumentItemAutoBreak: DocumentItem {
     open override func shoudPageBreak(rect: CGRect) -> Bool {
         Pdf.isEstimating = true
         var tempRect = rect
-        let img = Pdf.drawImage(size: CGSize(width: rect.maxX, height: rect.maxY)) {
+        Pdf.drawImage(size: CGSize(width: rect.maxX, height: rect.maxY)) {
             draw(rect: &tempRect)
         }
         Pdf.isEstimating = false

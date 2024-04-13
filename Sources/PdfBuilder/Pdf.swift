@@ -91,6 +91,7 @@ public enum Pdf {
     
     // MARK: Drawing helper
     
+    @discardableResult
     public static func drawImage(size: CGSize, block: () -> Void) -> AImage? {
         
 #if os(OSX)

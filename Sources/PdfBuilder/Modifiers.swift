@@ -11,7 +11,11 @@ public extension DocumentItem {
         Pdf.Background(color: color, self)
     }
 
-    func padding(_ size: CGFloat) -> DocumentItem {
+    func padding(equal size: CGFloat) -> DocumentItem {
+        Pdf.Padding(equal: size, self)
+    }
+    
+    func padding(_ size: CGSize) -> DocumentItem {
         Pdf.Padding(size: size, self)
     }
     

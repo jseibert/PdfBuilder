@@ -8,10 +8,10 @@ struct ClipShape_Previews: PreviewProvider {
     
     let paddingModifier = Pdf.Modifier { item in
         item
-            .padding(8)
+            .padding(equal: 8)
             .background(.systemGreen)
             .clipShape(.roundedRect(radius: 8))
-            .padding(4)
+            .padding(equal: 4)
     }
     
     builder.items = [
@@ -24,23 +24,23 @@ struct ClipShape_Previews: PreviewProvider {
                 
                 Pdf.Text("* 1"),
                 Pdf.Text(lorem)
-                    .padding(16)
+                    .padding(equal: 16)
                     .background(.orange)
                     .clipShape(.circle),
                 
                 Pdf.Text("* 2"),
                 Pdf.Text(lorem2)
-                    .padding(8)
+                    .padding(equal: 8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
-                    .padding(16),
+                    .padding(equal: 16),
                 
                 Pdf.Text("* 3"),
                 Pdf.Image(AImage(systemName: "person"))
-                    .padding(8)
+                    .padding(equal: 8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
-                    .padding(16),
+                    .padding(equal: 16),
                 
                 Pdf.Text("* 4"),
                 Pdf.VStack([
@@ -52,7 +52,7 @@ struct ClipShape_Previews: PreviewProvider {
                         .modifier(paddingModifier),
                     Pdf.Text("Row 4")
                         .modifier(paddingModifier)
-                ]).padding(16)
+                ]).padding(equal: 16)
             ])
     ]
     

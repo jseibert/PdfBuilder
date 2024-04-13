@@ -67,23 +67,23 @@ struct Pdf_Previews: PreviewProvider {
                 
                 Pdf.Text("* 1"),
                 Pdf.Text(lorem)
-                    .padding(16)
+                    .padding(equal: 16)
                     .background(.orange)
                     .clipShape(.circle),
                 
                 Pdf.Text("* 2"),
                 Pdf.Text(lorem2)
-                    .padding(8)
+                    .padding(equal: 8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
-                    .padding(16),
+                    .padding(equal: 16),
                 
                 Pdf.Text("* 3"),
                 Pdf.Image(AImage(systemName: "person"))
-                    .padding(8)
+                    .padding(equal: 8)
                     .background(.systemGreen)
                     .clipShape(.roundedRect(radius: 8))
-                    .padding(16),
+                    .padding(equal: 16),
                 
                 Pdf.Text("* 4"),
                 Pdf.VStack([
@@ -91,7 +91,7 @@ struct Pdf_Previews: PreviewProvider {
                     Pdf.Text("Row 2"),
                     Pdf.Text("Row 3"),
                     Pdf.Text("Row 4")
-                ]).padding(16)
+                ]).padding(equal: 16)
         ])
     ]
 
